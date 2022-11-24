@@ -26,16 +26,12 @@ export default function Products() {
         </div>
         <div className="flex flex-row ">
           {/* <div className="flex flex-row flex-wrap justify-center mt-20"> */}
-            <div className="grid grid-rows-5 grid-flow-col gap-4 mt-20">
+          <div className="grid grid-rows-5 grid-flow-col gap-4 mt-20">
             {products.map((item) => (
               <div key={item.id} className="flex flex-col">
-                <img
-                  className="w-3/6 h-min"
-                  src={item.image}
-                  alt="pink lady"
-                />
+                <img className="w-3/6 h-min" src={item.image} alt="pink lady" />
                 <div className="flex flex-col content-start">
-                  <Link to="/ProductDescription">
+                  <Link to={`/ProductDescription/${item.id}`}>
                     <h3>{item.title}</h3>
                   </Link>
                   <p>Price:${item.price}</p>
